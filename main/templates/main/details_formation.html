@@ -1,0 +1,13 @@
+ {% extends 'main/base.html' %}
+ {% load static %}
+ {% block content%}
+ <pre> nom de formation is {{f.name}}
+    description de formation {{ f.description}}
+        duree de formation {{ f.duree}} 
+        category {{ f.category }}
+        </pre>
+        {% if f.logo %}
+            <img src="{{ f.logo.url }}">
+        {% endif %}
+        
+ {% endblock %}

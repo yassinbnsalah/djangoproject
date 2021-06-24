@@ -1,0 +1,10 @@
+ {% extends 'main/base.html' %}
+ {% load static %}
+ {% block content%}
+formulaire d'ajoute
+<form action="" method="POST">
+    {% csrf_token %}
+       {{ f }}
+<input type="submit" value="Submit">
+</form> 
+ {% endblock %}

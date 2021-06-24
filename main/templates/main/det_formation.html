@@ -1,0 +1,18 @@
+ {% extends 'main/base2.html' %}
+ {% load static %}
+ {% block content%}
+
+ nom de formation is {{f.name}}
+ {% if f.etat %}
+ <h1> cette formation est active </h1> 
+ {% else %}
+ <h1> cette formation n'est pas active pour le moment </h1> 
+ {% endif %}
+        duree de formation {{ f.duree}} 
+        category {{ f.category }}
+   
+        {% if f.logo %}
+            <img src="{{ f.logo.url }}">
+        {% endif %}
+        
+ {% endblock %}

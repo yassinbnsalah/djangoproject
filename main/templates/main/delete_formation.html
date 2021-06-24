@@ -1,0 +1,12 @@
+ {% extends 'main/base.html' %}
+ {% load static %}
+ {% block content%}
+ <center>
+    <p> are you sur to delete {{ f.name }} </p> 
+    <form action="{% url 'delete_formation' f.id %}" method="POST"> 
+        {% csrf_token %}
+    <a href="{% url 'home' %} " class="btn btn-info"> cancel </a>
+    <input type="submit" class="btn btn-primary" value="delete"> 
+    </form>
+    </center>
+ {% endblock %}

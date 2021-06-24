@@ -1,0 +1,28 @@
+ {% extends 'main/base.html' %}
+ {% load static %}
+ {% block content%}
+ you have just {{ nb }} formations disponible 
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">durée</th>
+      <th scope="col">category</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for f in formations %}
+    <tr> 
+        <td> {{ f.name }} </td>
+        <td> {{ f.duree }} </td>
+        <td> {{ f.category.name }} </td>
+        <td> <a href="{% url 'update_formation' f.id %}" class="btn btn-success"> update</a> 
+             <a href="{% url 'delete_formation' f.id %}" class="btn btn-danger"> delete </a> 
+             <a href="{% url 'details_formation' f.id %}" class="btn btn-info"> details </a></td> 
+    </tr>
+    {% endfor %} 
+    </tbody>
+    </table>
+    <center> <a href="{% url 'create_formation' %}" class="btn btn-primary"> ajouter une formation </a> </center> 
+ {% endblock %}
