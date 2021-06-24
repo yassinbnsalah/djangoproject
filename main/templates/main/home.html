@@ -5,21 +5,24 @@
  <table class="table">
   <thead>
     <tr>
+      <th scope="col">logo</th>
       <th scope="col">name</th>
       <th scope="col">durée</th>
       <th scope="col">category</th>
+      <th scope="col">etat</th>
       <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>
   {% for f in formations %}
     <tr> 
+        <td>  <img src="{{ f.logo.url }}" width="40px" height="40px"> </td>
         <td> {{ f.name }} </td>
         <td> {{ f.duree }} </td>
         <td> {{ f.category.name }} </td>
+        <td> {{ f.etat }}
         <td> <a href="{% url 'update_formation' f.id %}" class="btn btn-success"> update</a> 
-             <a href="{% url 'delete_formation' f.id %}" class="btn btn-danger"> delete </a> 
-             <a href="{% url 'details_formation' f.id %}" class="btn btn-info"> details </a></td> 
+             <a href="{% url 'delete_formation' f.id %}" class="btn btn-danger"> delete </a></td> 
     </tr>
     {% endfor %} 
     </tbody>

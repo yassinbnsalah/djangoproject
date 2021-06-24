@@ -3,13 +3,14 @@
  {% block content%}
 formulaire d'ajoute
 <form method="post" enctype="multipart/form-data">
+
   {% csrf_token %}
                     <div class="form-group">
                         <label for="nom" class="form-label mt-4">nom de formation</label>
                         {{ f.name }}
                         </div>
                         <div class="form-group">
-                        <label for="nom" class="form-label mt-4">nom de formation</label>
+                        <label for="nom" class="form-label mt-4">description de formation</label>
                         {{ f.description }}
                         </div>
                     <div class="form-group">
@@ -23,6 +24,10 @@ formulaire d'ajoute
                          <div class="form-group">
                             <label for="formFile" class="form-label mt-4">Default file input example</label>
                         {{ f.logo }}
+                        </div>
+                          <div class="form-group">
+                            <label for="formFile" class="form-label mt-4">etat</label>
+                        {{ f.etat }}
                         </div>
   </div>
   <button type="submit" class="btn btn-primary">Upload</button>

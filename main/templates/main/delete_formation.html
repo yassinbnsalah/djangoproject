@@ -1,12 +1,17 @@
  {% extends 'main/base.html' %}
  {% load static %}
  {% block content%}
- <center>
-    <p> are you sur to delete {{ f.name }} </p> 
-    <form action="{% url 'delete_formation' f.id %}" method="POST"> 
-        {% csrf_token %}
-    <a href="{% url 'home' %} " class="btn btn-info"> cancel </a>
-    <input type="submit" class="btn btn-primary" value="delete"> 
+  <div class="row" >
+<div class="col-md-6" >
+    <div class="card card-body" >
+        <p>Voulez-vous supprimer cette formation {{ f.name }}?</p>
+            <form action="{% url 'delete_formation' f.id %}" method="POST"> 
+                {% csrf_token %}
+            <a href="{% url 'home' %} " class="btn btn-info"> cancel </a>
+            <input type="submit" class="btn btn-primary" value="delete"> 
     </form>
-    </center>
+         </div>
+   </div>
+</div>
+
  {% endblock %}
